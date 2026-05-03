@@ -119,39 +119,9 @@
 
 ## 🗄️ ERD
 
-```
-users
-├── id          PK
-├── email
-└── created_at
 
-products
-├── id          PK
-├── name
-├── category
-└── price
+<img width="1109" height="716" alt="image" src="https://github.com/user-attachments/assets/2bcb231e-3ec2-447e-b0c6-e8faa4c09c4a" />
 
-user_behavior_logs
-├── id          PK
-├── user_id     FK → users.id
-├── product_id  FK → products.id
-├── action_type (click / cart / purchase)
-├── duration
-└── created_at
-
-recommendations
-├── id          PK
-├── user_id     FK → users.id
-├── product_id  FK → products.id
-└── score
-
-anomaly_logs
-├── id          PK
-├── user_id     FK → users.id
-├── reason
-├── score
-└── created_at
-```
 
 ---
 
