@@ -1,0 +1,57 @@
+################################
+#  로컬 개발 환경
+################################
+
+server:
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/aishop_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update   # 개발용: 테이블 자동 생성/수정
+    show-sql: true       # SQL 로그 출력
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          time_zone: Asia/Seoul
+          batch_size: 100
+    open-in-view: false  # 트랜잭션 범위 제한 (권장)
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+
+  # OAuth2 (로컬 테스트용)
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: ${CLIENT_ID_GOOGLE:your-google-client-id}
+            client-secret: ${CLIENT_SECRET_GOOGLE:your-google-client-secret}
+            scope:
+              - email
+              - profile
+            redirect-uri: http://localhost:8080/login/oauth2/code/google
+
+# ─── AI 서버 (로컬 FastAPI) ─────────────────
+ai:
+  server:
+    url: http://localhost:8000
+
+# ─── 로그 설정 ─────────────────────────────
+logging:
+  level:
+    root: info
+    org.hibernate.SQL: debug   # SQL 확인
+    org.mybatis: debug
+    com.aishop: debug

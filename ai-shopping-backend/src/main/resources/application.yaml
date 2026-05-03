@@ -1,58 +1,28 @@
-server:
-  port: 8080
+################################
+#  공통 설정 (모든 환경에서 사용)
+################################
 
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/aishop_db?serverTimezone=Asia/Seoul&characterEncoding=UTF-8
-    username: root
-    password: 1234
-    driver-class-name: com.mysql.cj.jdbc.Driver
+  profiles:
+    active: local   # 기본 실행 환경 (절대 prod 금지)
+  application:
+    name: aishop    # 애플리케이션 이름
 
-  # ─── JPA 설정 ─────────────────────────────
-  jpa:
-    hibernate:
-      ddl-auto: update   # 개발용 (운영에서는 validate or none)
-    properties:
-      hibernate:
-        format_sql: true
-        show_sql: true
-    database-platform: org.hibernate.dialect.MySQLDialect
-
-  # ─── Redis 설정 ───────────────────────────
-  data:
-    redis:
-      host: localhost
-      port: 6379
-
-  # ─── Security 기본 설정 ───────────────────
-  security:
-    oauth2:
-      client:
-        registration:
-          google:
-            client-id: your-client-id
-            client-secret: your-client-secret
-            scope:
-              - profile
-              - email
-
-# ─── MyBatis 설정 ───────────────────────────
+# ─── MyBatis 공통 설정 ─────────────────────
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
   type-aliases-package: com.aishop.domain
   configuration:
-    map-underscore-to-camel-case: true
+    map-underscore-to-camel-case: true   # DB snake_case → Java camelCase 자동 변환
 
-# ─── 로그 설정 ─────────────────────────────
-logging:
-  level:
-    org.hibernate.SQL: debug
-    org.hibernate.type.descriptor.sql: trace
-    com.aishop: debug
+# ─── JWT 설정 (공통) ───────────────────────
+jwt:
+  accsecret: ${JWT_ACCSECRET:local-access-secret}
+  refsecret: ${JWT_REFSECRET:local-refresh-secret}
+  access-token-expiration: 1800000      # 30분
+  refresh-token-expiration: 604800000   # 7일
 
-# ─── 커스텀 설정 (AI 서버 연동용) ───────────
+# ─── AI 서버 공통 설정 ─────────────────────
 ai:
-  server:
-    url: http://localhost:8000
   anomaly:
-    threshold: 0.8
+    threshold: 0.8   # 이상 탐지 임계값
