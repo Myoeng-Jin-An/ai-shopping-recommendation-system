@@ -11,7 +11,7 @@ spring:
 # ─── MyBatis 공통 설정 ─────────────────────
 mybatis:
   mapper-locations: classpath:/mapper/**/*.xml
-  type-aliases-package: com.aishop.domain
+  type-aliases-package: com.aishop.backend.domain
   configuration:
     map-underscore-to-camel-case: true   # DB snake_case → Java camelCase 자동 변환
 
@@ -26,3 +26,11 @@ jwt:
 ai:
   anomaly:
     threshold: 0.8   # 이상 탐지 임계값
+
+# ─── Swagger/OpenAPI 설정 ─────────────────
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    display-request-duration: true
+  api-docs:
+    path: /v3/api-docs
