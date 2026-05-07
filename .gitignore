@@ -1,0 +1,61 @@
+# Gradle
+.gradle/
+build/
+**/build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+!**/gradle/wrapper/gradle-wrapper.jar
+
+# Java
+*.class
+out/
+**/out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# VS Code
+.vscode/
+
+# STS / Eclipse
+.apt_generated/
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache/
+bin/
+**/bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+# NetBeans
+nbproject/private/
+nbbuild/
+dist/
+nbdist/
+.nb-gradle/
+
+# Environment
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.yaml
+
+# Logs
+*.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Project generated
+HELP.md
