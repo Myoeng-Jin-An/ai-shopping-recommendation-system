@@ -45,12 +45,9 @@
 
 ## 🧱 시스템 아키텍처
 
-```
 
 <img width="1672" height="941" alt="image" src="https://github.com/user-attachments/assets/91d75f56-f66a-4311-8553-b70563838eb5" />
 
-
-```
 
 ### 데이터 흐름
 
