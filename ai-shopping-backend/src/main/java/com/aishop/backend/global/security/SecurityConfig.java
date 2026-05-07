@@ -28,6 +28,9 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(SWAGGER_PATHS).permitAll()
                         .requestMatchers("/api/users/**").permitAll()
+                        .requestMatchers("/api/products/**").permitAll()
+                        .requestMatchers("/api/brands/**").permitAll()
+                        .requestMatchers("/api/categories/**").permitAll()
                         .anyRequest().authenticated())
                 .build();
     }
