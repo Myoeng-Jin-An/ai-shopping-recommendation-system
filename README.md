@@ -241,7 +241,7 @@ main
 |--------|------|-----------|
 | `main` | 실제 배포 브랜치 | - |
 | `develop` | 개발 통합 브랜치 | `main` |
-| `feature/*` | 기능 단위 개발 | `develop` |
+| `feat/*` | 기능 단위 개발 | `develop` |
 | `release/*` | 배포 전 QA 및 버전 관리 | `main`, `develop` |
 | `hotfix/*` | 운영 긴급 버그 수정 | `main`, `develop` |
 
@@ -266,7 +266,7 @@ docs: API 명세 README 업데이트
 
 ### PR 규칙
 
-- `feature/*` → `develop` PR 시 **최소 1명 이상 코드 리뷰** 후 머지
+- `feat/*` → `develop` PR 시 **최소 1명 이상 코드 리뷰** 후 머지
 - PR 제목은 커밋 컨벤션을 따름
 - 머지 방식은 **Squash and Merge** 사용 (커밋 히스토리 정리)
 
