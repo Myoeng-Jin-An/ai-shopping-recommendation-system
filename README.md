@@ -228,9 +228,9 @@ Git Flow를 기반으로 한 브랜치 전략을 사용합니다.
 ```
 main
 ├── develop
-│   ├── feature/user-behavior-log      # 기능 개발
-│   ├── feature/recommendation-engine
-│   └── feature/anomaly-detection
+│   ├── feat/user-behavior-log      # 기능 개발
+│   ├── feat/recommendation-engine
+│   └── feat/anomaly-detection
 ├── release/1.0.0                      # 배포 전 QA
 └── hotfix/fix-anomaly-threshold       # 긴급 버그 수정
 ```
