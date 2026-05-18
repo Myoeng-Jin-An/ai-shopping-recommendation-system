@@ -25,7 +25,10 @@ public enum ErrorCode {
 
     // Behavior
     SESSION_NOT_FOUND(HttpStatus.NOT_FOUND, "SESSION_001", "세션을 찾을 수 없습니다."),
-    BEHAVIOR_LOG_NOT_FOUND(HttpStatus.NOT_FOUND, "BEHAVIOR_001", "행동 로그를 찾을 수 없습니다.");
+    BEHAVIOR_LOG_NOT_FOUND(HttpStatus.NOT_FOUND, "BEHAVIOR_001", "행동 로그를 찾을 수 없습니다."),
+
+    // Order
+    ORDER_NOT_FOUND(HttpStatus.NOT_FOUND, "ORDER_404", "주문을 찾을 수 없습니다.");
 
     private final HttpStatus status;
     private final String code;
