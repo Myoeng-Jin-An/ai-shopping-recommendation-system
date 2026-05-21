@@ -34,6 +34,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/behavior-logs/**").permitAll()
                         .requestMatchers("/api/orders/**").permitAll()
                         .requestMatchers("/api/recommendations/**").permitAll()
+                        .requestMatchers("/api/anomaly-logs/**").permitAll()
                         .anyRequest().authenticated())
                 .build();
     }

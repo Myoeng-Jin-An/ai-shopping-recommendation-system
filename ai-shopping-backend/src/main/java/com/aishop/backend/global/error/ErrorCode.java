@@ -32,7 +32,10 @@ public enum ErrorCode {
 
     // Recommendation
     RECOMMENDATION_NOT_FOUND(HttpStatus.NOT_FOUND, "RECOMMENDATION_404", "추천 결과를 찾을 수 없습니다."),
-    RECOMMENDATION_ALREADY_EXISTS(HttpStatus.CONFLICT, "RECOMMENDATION_409", "이미 존재하는 추천 결과입니다.");
+    RECOMMENDATION_ALREADY_EXISTS(HttpStatus.CONFLICT, "RECOMMENDATION_409", "이미 존재하는 추천 결과입니다."),
+
+    // Anomaly
+    ANOMALY_LOG_NOT_FOUND(HttpStatus.NOT_FOUND, "ANOMALY_404", "이상 행동 로그를 찾을 수 없습니다.");
 
     private final HttpStatus status;
     private final String code;
