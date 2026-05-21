@@ -7,7 +7,6 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * Swagger/OpenAPI 문서 설정
- *
  * API 문서의 제목, 설명, 버전 정보를 한 곳에서 관리
  */
 @Configuration
