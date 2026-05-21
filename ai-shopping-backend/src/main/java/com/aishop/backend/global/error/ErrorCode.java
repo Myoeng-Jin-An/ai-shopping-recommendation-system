@@ -28,7 +28,11 @@ public enum ErrorCode {
     BEHAVIOR_LOG_NOT_FOUND(HttpStatus.NOT_FOUND, "BEHAVIOR_001", "행동 로그를 찾을 수 없습니다."),
 
     // Order
-    ORDER_NOT_FOUND(HttpStatus.NOT_FOUND, "ORDER_404", "주문을 찾을 수 없습니다.");
+    ORDER_NOT_FOUND(HttpStatus.NOT_FOUND, "ORDER_404", "주문을 찾을 수 없습니다."),
+
+    // Recommendation
+    RECOMMENDATION_NOT_FOUND(HttpStatus.NOT_FOUND, "RECOMMENDATION_404", "추천 결과를 찾을 수 없습니다."),
+    RECOMMENDATION_ALREADY_EXISTS(HttpStatus.CONFLICT, "RECOMMENDATION_409", "이미 존재하는 추천 결과입니다.");
 
     private final HttpStatus status;
     private final String code;
